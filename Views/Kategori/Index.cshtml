@@ -1,8 +1,25 @@
-﻿
+﻿@using MvcProje.Models.Entity
+@model List<TBLKATEGORILER>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
+<div class="col-md-6 col-lg-6">
+    <table class="table table-bordered">
+        <tr>
+            <th>Kategori ID</th>
+            <th>Kategori AD</th>
+        </tr>
+        <tbody>
+            @foreach (var kategori in Model)
+            {
+            <tr>
+                <td>@kategori.KATEGORIID</td>
+                <td>@kategori.KATEGORIAD</td>
 
-<h2>Burası Kategorilerin listeleneceği alan</h2>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
 

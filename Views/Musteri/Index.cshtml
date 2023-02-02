@@ -1,0 +1,30 @@
+﻿@using MvcProje.Models.Entity;
+@model List<TBLMUSTERILER>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="col-lg-6 col-md-9">
+    <table class="table table-bordered">
+        <tr>
+            <th>Müşteri ID</th>
+            <th>Müşteri Ad</th>
+            <th>Müşteri Soyad</th>
+        </tr>
+        <tbody>
+            @foreach (var musteriler in Model)
+            {
+
+                <tr>
+                    <td>@musteriler.MUSTERIID</td>
+                    <td>@musteriler.MUSTERIAD</td>
+                    <td>@musteriler.MUSTERISOYAD</td>
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>

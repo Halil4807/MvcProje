@@ -7,14 +7,14 @@ using System.Web.Mvc;
 
 namespace MvcProje.Controllers
 {
-    public class KategoriController : Controller
+    public class MusteriController : Controller
     {
-        // GET: Kategori
+        // GET: Musteri
         MvcDbStokEntities db = new MvcDbStokEntities();
         public ActionResult Index()
         {
-            var kategoriler = db.TBLKATEGORILER.ToList();
-            return View(kategoriler);
+            var musteri = db.TBLMUSTERILER.ToList();
+            return View(musteri);
         }
     }
 }
