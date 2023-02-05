@@ -1,4 +1,4 @@
-﻿
+﻿@model MvcProje.Models.Entity.TBLKATEGORILER
 @{
     ViewBag.Title = "YeniKategori";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -8,10 +8,12 @@
     <form class="form-group" method="post">
         <div>
             <label>Kategori Ad:</label>
-            <input type="text" class="form-control" name="KategoriAd"  required="required"/>
+            @*<input type="text" class="form-control" name="KategoriAd" required="required" />*@
+            @Html.TextBoxFor(m => m.KATEGORIAD, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m=>m.KATEGORIAD,"",new {@style="color:red"})
         </div>
         <div style="margin-top:15px">
-            <button>Kategori Ekle</button>
+            <button class="btn btn-success">Kategori Ekle</button>
         </div>
     </form>
 </div>

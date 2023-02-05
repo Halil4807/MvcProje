@@ -46,9 +46,10 @@ namespace MvcProje.Controllers
         }
         public ActionResult Guncelle(TBLURUNLER parametre)
         {
-            var musteri = db.TBLURUNLER.Find(parametre.URUNID);
-            musteri.URUNAD = parametre.URUNAD;
+            var urun = db.TBLURUNLER.Find(parametre.URUNID);
+            urun.URUNAD = parametre.URUNAD;
             db.SaveChanges();
+
             return RedirectToAction("Index");
         }
     }
