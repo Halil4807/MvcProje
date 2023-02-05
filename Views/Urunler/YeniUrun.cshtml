@@ -8,11 +8,11 @@
     <form class="form-group" method="post">
         <div>
             <label>Ürün Ad:</label>
-            <input type="text" class="form-control" name="UrunAd" required="required" />
+            <input type="text" class="form-control" name="UrunAd" required="" maxlength="50" placeholder="Ürün Adı:"/>
         </div>
         <div>
             <label>Marka:</label>
-            <input type="text" class="form-control" name="Marka" required="required" />
+            <input type="text" class="form-control" name="Marka" required="" maxlength="50"/>
         </div>
         <div>
             <label>Kategori:</label>
@@ -20,14 +20,14 @@
         </div>
         <div>
             <label>Fiyat:</label>
-            <input type="text" class="form-control" name="Fiyat" required="required" />
+            <input type="text" class="form-control" name="Fiyat" value="0" required="" />
         </div>
         <div>
             <label>Stok:</label>
-            <input type="text" class="form-control" name="Stok" required="required" />
+            <input type="text" class="form-control" name="Stok" value="0"  required="" />
         </div>
         <div style="margin-top:15px">
-            <button>Ürün Ekle</button>
+            <button class="btn btn-success">Ürün Ekle</button>
         </div>
     </form>
 </div>
