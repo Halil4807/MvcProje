@@ -28,5 +28,12 @@ namespace MvcProje.Controllers
             db.SaveChanges();
             return View();
         }
+        public ActionResult Sil(int id)
+        {
+            var MusteriSil = db.TBLMUSTERILER.Find(id);
+            db.TBLMUSTERILER.Remove(MusteriSil);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

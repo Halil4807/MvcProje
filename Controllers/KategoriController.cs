@@ -29,5 +29,12 @@ namespace MvcProje.Controllers
             db.SaveChanges();
             return View();
         }
+        public ActionResult Sil(int id)
+        {
+            var KategoriSil = db.TBLKATEGORILER.Find(id);
+            db.TBLKATEGORILER.Remove(KategoriSil);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

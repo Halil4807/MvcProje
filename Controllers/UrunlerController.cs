@@ -32,5 +32,12 @@ namespace MvcProje.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult Sil(int id)
+        {
+            var UrunSil = db.TBLURUNLER.Find(id);
+            db.TBLURUNLER.Remove(UrunSil);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
