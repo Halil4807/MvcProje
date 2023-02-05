@@ -24,9 +24,14 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult YeniMusteri(TBLMUSTERILER parametre)
         {
+
+            if (!ModelState.IsValid)
+            {
+                return View("YeniMusteri");
+            }
             db.TBLMUSTERILER.Add(parametre);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
         public ActionResult Sil(int id)
         {
