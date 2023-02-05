@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using MvcProje.Models.Entity;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcProje.Controllers
 {
@@ -11,9 +13,10 @@ namespace MvcProje.Controllers
     {
         // GET: Urunler
         MvcDbStokEntities db = new MvcDbStokEntities();
-        public ActionResult Index()
+        public ActionResult Index(int sayfa=1)
         {
-            var urunler = db.TBLURUNLER.ToList();
+            //var urunler = db.TBLURUNLER.ToList();
+            var urunler = db.TBLURUNLER.ToList().ToPagedList(sayfa, 6);
             return View(urunler);
         }
         [HttpGet]

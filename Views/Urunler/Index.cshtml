@@ -1,5 +1,7 @@
 ﻿@using MvcProje.Models.Entity
-@model List<TBLURUNLER>
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<TBLURUNLER>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -29,7 +31,8 @@
                     <td>@urunler.TBLKATEGORILER.KATEGORIAD</td>
                     <td>@urunler.FIYAT</td>
                     <td>@urunler.STOK</td>
-                    <td><a href="/Urunler/Sil/@urunler.URUNID" class="btn btn-danger">Sil</a></td>
+                    @*<td><a href="/Urunler/Sil/@urunler.URUNID" class="btn btn-danger">Sil</a></td>*@
+                    <td>@Html.ActionLink("Ürün Sil", "Sil", new { id = urunler.URUNID }, new { @class = "btn btn-danger", onclick = "return confirm('Emin misin?')" })</td>
                     <td><a href="/Urunler/UrunGuncelle/@urunler.URUNID" class="btn btn-primary">Güncelle</a></td>
 
                 </tr>
@@ -37,5 +40,7 @@
             }
         </tbody>
     </table>
+
+    @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
     <a href="/Urunler/YeniUrun/" class="btn btn-success">Yeni Ürün Ekle</a>
-</div>
+    </div>

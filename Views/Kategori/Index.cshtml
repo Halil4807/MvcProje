@@ -21,7 +21,8 @@
             <tr>
                 <td>@kategori.KATEGORIID</td>
                 <td>@kategori.KATEGORIAD</td>
-                <td><a href="/Kategori/Sil/@kategori.KATEGORIID" class="btn btn-danger">Sil</a></td>
+                @*<td><a href="/Kategori/Sil/@kategori.KATEGORIID" class="btn btn-danger">Sil</a></td>*@
+                <td>@Html.ActionLink("Kategori Sil", "Sil", new { id = kategori.KATEGORIID }, new { @class = "btn btn-danger", onclick = "return confirm('Emin misin?')" })</td>
                 <td><a href="/Kategori/KategoriGuncelle/@kategori.KATEGORIID" class="btn btn-primary">Güncelle</a></td>
 
             </tr>
