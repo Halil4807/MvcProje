@@ -36,5 +36,10 @@ namespace MvcProje.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult Guncelle(int id)
+        {
+            var kategori = db.TBLKATEGORILER.Find(id);
+            return View("Guncelle",kategori);
+        }
     }
 }
