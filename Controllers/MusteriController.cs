@@ -16,5 +16,17 @@ namespace MvcProje.Controllers
             var musteri = db.TBLMUSTERILER.ToList();
             return View(musteri);
         }
+        [HttpGet]
+        public ActionResult YeniMusteri()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniMusteri(TBLMUSTERILER parametre)
+        {
+            db.TBLMUSTERILER.Add(parametre);
+            db.SaveChanges();
+            return View();
+        }
     }
 }

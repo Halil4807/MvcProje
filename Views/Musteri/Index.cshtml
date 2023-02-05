@@ -6,12 +6,14 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<div class="col-lg-6 col-md-9">
+<div">
     <table class="table table-bordered">
         <tr>
             <th>Müşteri ID</th>
             <th>Müşteri Ad</th>
             <th>Müşteri Soyad</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
         </tr>
         <tbody>
             @foreach (var musteriler in Model)
@@ -21,10 +23,13 @@
                     <td>@musteriler.MUSTERIID</td>
                     <td>@musteriler.MUSTERIAD</td>
                     <td>@musteriler.MUSTERISOYAD</td>
+                    <td><a href="/Musteri/Sil/@musteriler.MUSTERIID" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Musteri/Güncelle/@musteriler.MUSTERIID" class="btn btn-primary">Güncelle</a></td>
 
                 </tr>
 
             }
         </tbody>
     </table>
-</div>
+    <a href="/Musteri/YeniMusteri/" class="btn btn-success">Yeni Müşteri Ekle</a>
+    </div>

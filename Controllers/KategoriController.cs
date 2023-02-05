@@ -16,5 +16,18 @@ namespace MvcProje.Controllers
             var kategoriler = db.TBLKATEGORILER.ToList();
             return View(kategoriler);
         }
+        [HttpGet]
+        public ActionResult YeniKategori()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult YeniKategori(TBLKATEGORILER parametre)
+        {
+            db.TBLKATEGORILER.Add(parametre);
+            db.SaveChanges();
+            return View();
+        }
     }
 }

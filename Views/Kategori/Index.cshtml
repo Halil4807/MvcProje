@@ -4,11 +4,13 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-<div class="col-md-6 col-lg-6">
+<div>
     <table class="table table-bordered">
         <tr>
             <th>Kategori ID</th>
             <th>Kategori AD</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
         </tr>
         <tbody>
             @foreach (var kategori in Model)
@@ -16,10 +18,13 @@
             <tr>
                 <td>@kategori.KATEGORIID</td>
                 <td>@kategori.KATEGORIAD</td>
+                <td><a href="/Kategori/Sil/@kategori.KATEGORIID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Kategori/Güncelle/@kategori.KATEGORIID" class="btn btn-primary">Güncelle</a></td>
 
             </tr>
             }
         </tbody>
     </table>
+    <a href="/Kategori/YeniKategori/" class="btn btn-success">Yeni Kategori Ekle</a>
 </div>
 

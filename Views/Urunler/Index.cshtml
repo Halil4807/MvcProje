@@ -6,7 +6,7 @@
 }
 
 
-<div class="col-lg-6 col-md-9">
+<div">
     <table class="table table-bordered">
         <tr>
             <th>Ürün ID</th>
@@ -15,6 +15,8 @@
             <th>Ürün Kategori</th>
             <th>Ürün Fiyat</th>
             <th>Ürün Stok</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
         </tr>
         <tbody>
             @foreach (var urunler in Model)
@@ -27,10 +29,13 @@
                     <td>@urunler.URUNKATEGORI</td>
                     <td>@urunler.FIYAT</td>
                     <td>@urunler.STOK</td>
+                    <td><a href="/Urunler/Sil/@urunler.URUNID" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Urunler/Güncelle/@urunler.URUNID" class="btn btn-primary">Güncelle</a></td>
 
                 </tr>
 
             }
         </tbody>
     </table>
+    <a href="/Urunler/YeniUrun/" class="btn btn-success">Yeni Ürün Ekle</a>
 </div>
