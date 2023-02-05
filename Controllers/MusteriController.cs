@@ -35,10 +35,18 @@ namespace MvcProje.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult Guncelle(int id)
+        public ActionResult MusteriGuncelle(int id)
         {
             var musteri = db.TBLMUSTERILER.Find(id);
-            return View("Guncelle", musteri);
+            return View("MusteriGuncelle", musteri);
+        }
+        public ActionResult Guncelle(TBLMUSTERILER parametre)
+        {
+            var musteri = db.TBLMUSTERILER.Find(parametre.MUSTERIID);
+            musteri.MUSTERIAD = parametre.MUSTERIAD;
+            musteri.MUSTERISOYAD = parametre.MUSTERISOYAD;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

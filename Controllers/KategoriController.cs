@@ -36,10 +36,17 @@ namespace MvcProje.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult Guncelle(int id)
+        public ActionResult KategoriGuncelle(int id)
         {
             var kategori = db.TBLKATEGORILER.Find(id);
-            return View("Guncelle",kategori);
+            return View("KategoriGuncelle", kategori);
+        }
+        public ActionResult Guncelle(TBLKATEGORILER parametre)
+        {
+            var musteri = db.TBLKATEGORILER.Find(parametre.KATEGORIID);
+            musteri.KATEGORIAD = parametre.KATEGORIAD;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

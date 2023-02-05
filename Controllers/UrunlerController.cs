@@ -39,10 +39,17 @@ namespace MvcProje.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult Guncelle(int id)
+        public ActionResult UrunGuncelle(int id)
         {
             var urun = db.TBLURUNLER.Find(id);
-            return View("Guncelle", urun);
+            return View("UrunGuncelle", urun);
+        }
+        public ActionResult Guncelle(TBLURUNLER parametre)
+        {
+            var musteri = db.TBLURUNLER.Find(parametre.URUNID);
+            musteri.URUNAD = parametre.URUNAD;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
