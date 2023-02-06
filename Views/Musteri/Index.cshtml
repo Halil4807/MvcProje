@@ -7,6 +7,15 @@
 }
 
 <div">
+    @using (Html.BeginForm("Index", "Musteri", FormMethod.Get))
+    {
+        <p>
+            Arama: @Html.TextBox("ara")
+            <button>Ara</button>
+        </p>
+    }
+
+
     <table class="table table-bordered">
         <tr>
             <th>Müşteri ID</th>
@@ -24,7 +33,7 @@
                     <td>@musteri.MUSTERIAD</td>
                     <td>@musteri.MUSTERISOYAD</td>
                     @*<td><a href="/Musteri/Sil/@musteriler.MUSTERIID" class="btn btn-danger">Sil</a></td>*@
-                    <td>@Html.ActionLink("Müşteri Sil", "Sil", new { id = musteri.MUSTERIID }, new{@class="btn btn-danger",onclick="return confirm('Emin misin?')" })</td>
+                    <td>@Html.ActionLink("Müşteri Sil", "Sil", new { id = musteri.MUSTERIID }, new { @class = "btn btn-danger", onclick = "return confirm('Emin misin?')" })</td>
                     <td><a href="/Musteri/MusteriGuncelle/@musteri.MUSTERIID" class="btn btn-primary">Güncelle</a></td>
 
                 </tr>

@@ -11,10 +11,16 @@ namespace MvcProje.Controllers
     {
         // GET: Musteri
         MvcDbStokEntities db = new MvcDbStokEntities();
-        public ActionResult Index()
+        public ActionResult Index(string ara)
         {
-            var musteri = db.TBLMUSTERILER.ToList();
-            return View(musteri);
+            var sonuc = from i in db.TBLMUSTERILER select i;
+            if (!string.IsNullOrEmpty(ara))
+            {
+                sonuc = sonuc.Where(m=>m.MUSTERIAD.Contains(ara));
+            }
+            return View(sonuc.ToList());
+            //var musteri = db.TBLMUSTERILER.ToList();
+            //return View(musteri);
         }
         [HttpGet]
         public ActionResult YeniMusteri()
