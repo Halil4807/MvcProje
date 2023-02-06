@@ -25,12 +25,25 @@
                 <li><a href="/Urunler/Index/">Ürünler</a></li>
                 <li><a href="/Musteri/Index/">Müşteriler</a></li>
                 <li><a href="/Satis/Index/">Satışlar</a></li>
-                <li><a href="/Default/Index/">Yardım</a></li>
+                <li><a href="" data-toggle="modal" data-target="#Hakkimizda">Hakkında</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
+        <div class="modal" id="Hakkimizda">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Hakkımızda</h2>
+                    </div>
+                    <div class="modal-body">
+                        <img src="~/image/logo.png" alt="Alternate Text" />
+                        Bu proje <b>Halil ÖZTÜRK</b> taradından yapılmıştır.
+                    </div>
+                </div>
+            </div>
+        </div>
         @RenderBody()
     </div>
 
