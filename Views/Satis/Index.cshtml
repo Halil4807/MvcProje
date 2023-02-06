@@ -6,6 +6,33 @@
 
 <h2>Satışlar Sayfası</h2>
 <br />
+@*<table class="table table-bordered">
+    <tr>
+        <th>Satış ID</th>
+        <th>Ürün Adı</th>
+        <th>Müşteri Adı Soyadı</th>
+        <th>Adet</th>
+        <th>Fiyat</th>
+        <th>Sil</th>
+    </tr>
+    <tbody>
+        @foreach (var satis in Model)
+        {
+
+        <tr>
+            <td>@satis.SATISID</td>
+            <td>@satis.URUN</td>
+            <td>@satis.MUSTERI</td>
+            <td>@satis.ADET</td>
+            <td>@satis.FIYAT</td>
+            <td>@Html.ActionLink("Satış Sil", "Sil", new { id = satis.SATISID }, new { @class = "btn btn-danger", onclick = "return confirm('Emin misin?')" })</td>
+
+        </tr>
+
+        }
+    </tbody>
+</table>*@
+
 <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
     Satış Yap
 </button>

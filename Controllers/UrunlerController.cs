@@ -15,8 +15,8 @@ namespace MvcProje.Controllers
         MvcDbStokEntities db = new MvcDbStokEntities();
         public ActionResult Index(int sayfa=1)
         {
-            //var urunler = db.TBLURUNLER.ToList();
-            var urunler = db.TBLURUNLER.ToList().ToPagedList(sayfa, 6);
+            var urunler = db.TBLURUNLER.ToList();
+            //var urunler = db.TBLURUNLER.ToList().ToPagedList(sayfa, 6);
             return View(urunler);
         }
         [HttpGet]
